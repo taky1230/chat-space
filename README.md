@@ -48,12 +48,12 @@ Things you may want to cover:
 - has_many :messages
 
 
-## message テーブル
+## messages テーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
-|image|strig|foreign_key: true|
+|image|strig||
 |group|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
 
