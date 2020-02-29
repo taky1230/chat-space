@@ -1,0 +1,68 @@
+.main_chat
+  .main_chat__group-info
+    .main_chat__group-info__current-box
+      .main_chat__group-info__current-box__current-group
+        テックエキスパート1
+      .main_chat__group-info__current-box__current-member
+        Member :
+        .main_chat__group-info__current-box__current-member__name
+          taky
+
+    = link_to "#", type: "button", class: "edit-btn" do
+      .main_chat__group-info__edit-btn
+        Edit
+      
+
+  .main_chat__message-list
+    .main_chat__message-list__main-box
+      .main_chat__message-list__main-box__current-box
+        .main_chat__message-list__main-box__current-box__upper-info
+          .main_chat__message-list__main-box__current-box__upper-info__talker
+            taky
+          .main_chat__message-list__main-box__current-box__upper-info__date
+            2020/02/26(Wed) 19:00:00
+        .main_chat__message-list__main-box__current-box__text
+          こんばんは！
+
+      .main_chat__message-list__main-box__current-box
+        .main_chat__message-list__main-box__current-box__upper-info
+          .main_chat__message-list__main-box__current-box__upper-info__talker
+            shogo
+          .main_chat__message-list__main-box__current-box__upper-info__date
+            2020/02/26(Wed) 19:00:00
+        .main_chat__message-list__main-box__current-box__text
+          こんばんは！
+
+      .main_chat__message-list__main-box__current-box
+        .main_chat__message-list__main-box__current-box__upper-info
+          .main_chat__message-list__main-box__current-box__upper-info__talker
+            funa
+          .main_chat__message-list__main-box__current-box__upper-info__date
+            2020/02/26(Wed) 19:00:00
+        .main_chat__message-list__main-box__current-box__text
+          こんばんは！
+
+      .main_chat__message-list__main-box__current-box
+        .main_chat__message-list__main-box__current-box__upper-info
+          .main_chat__message-list__main-box__current-box__upper-info__talker
+            itakura
+          .main_chat__message-list__main-box__current-box__upper-info__date
+            2020/02/26(Wed) 19:00:00
+        .main_chat__message-list__main-box__current-box__text
+          こんばんは！
+
+
+  .main_chat__message-form
+    .main_chat__message-form__main-box
+      .main_chat__message-form__main-box__input-box
+        .main_chat__message-form__main-box__input-box__text
+          type a message
+        .main_chat__message-form__main-box__input-box__img
+          %label{class: "main_chat__message-form__main-box__input-box__img__label"}
+            = icon('fas', 'image fa-lg faa-shake animated-hover')
+            %input{type: "file", class: "main_chat__message-form__main-box__input-box__img__file"}
+            
+            
+      .main_chat__message-form__main-box__send-btn
+        = link_to "#", type: "submit", class: "send-btn" do
+          Send
