@@ -48,6 +48,17 @@ Things you may want to cover:
 - has_many :messages
 
 
+## groups_users テーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|group|references|foreign_key: true, null: false|
+|user|references|foreign_key: true, null: false|
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
 ## messages テーブル
 
 |Column|Type|Options|
@@ -60,15 +71,3 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :group
-
-
-## groups_users テーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|group|references|index: true, foreign_key: true, null: false|
-|user|references|index: true, foreign_key: true, null: false|
-
-### Association
-- belongs_to :group
-- belongs_to :user
