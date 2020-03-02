@@ -63,7 +63,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text||
+|content|text||
 |image|strig||
 |group|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
