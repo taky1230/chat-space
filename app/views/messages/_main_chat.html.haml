@@ -2,67 +2,67 @@
   .main_chat__group-info
     .main_chat__group-info__current-box
       .main_chat__group-info__current-box__current-group
-        テックエキスパート1
+        - current_user.groups.index do |group|
+          = group.name
       .main_chat__group-info__current-box__current-member
         Member :
         .main_chat__group-info__current-box__current-member__name
-          taky
+          - @group.users.each_with_index do |user|
+            = user.name
 
-    = link_to "#", type: "button", class: "edit-btn" do
+    = link_to edit_group_path(@group), type: "button", class: "edit-btn" do
       .main_chat__group-info__edit-btn
         Edit
       
 
   .main_chat__message-list
     .main_chat__message-list__main-box
-      .main_chat__message-list__main-box__current-box
-        .main_chat__message-list__main-box__current-box__upper-info
-          .main_chat__message-list__main-box__current-box__upper-info__talker
-            taky
-          .main_chat__message-list__main-box__current-box__upper-info__date
-            2020/02/26(Wed) 19:00:00
-        .main_chat__message-list__main-box__current-box__text
-          こんばんは！
+      = render @messages
+      -# .main_chat__message-list__main-box__current-box
+      -#   .main_chat__message-list__main-box__current-box__upper-info
+      -#     .main_chat__message-list__main-box__current-box__upper-info__talker
+      -#       = message.user.name
+      -#     .main_chat__message-list__main-box__current-box__upper-info__date
+      -#       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+      -#   .main_chat__message-list__main-box__current-box__text
+      -#     こんばんは！
 
-      .main_chat__message-list__main-box__current-box
-        .main_chat__message-list__main-box__current-box__upper-info
-          .main_chat__message-list__main-box__current-box__upper-info__talker
-            shogo
-          .main_chat__message-list__main-box__current-box__upper-info__date
-            2020/02/26(Wed) 19:00:00
-        .main_chat__message-list__main-box__current-box__text
-          こんばんは！
+      -# .main_chat__message-list__main-box__current-box
+      -#   .main_chat__message-list__main-box__current-box__upper-info
+      -#     .main_chat__message-list__main-box__current-box__upper-info__talker
+      -#       shogo
+      -#     .main_chat__message-list__main-box__current-box__upper-info__date
+      -#       2020/02/26(Wed) 19:00:00
+      -#   .main_chat__message-list__main-box__current-box__text
+      -#     こんばんは！
 
-      .main_chat__message-list__main-box__current-box
-        .main_chat__message-list__main-box__current-box__upper-info
-          .main_chat__message-list__main-box__current-box__upper-info__talker
-            funa
-          .main_chat__message-list__main-box__current-box__upper-info__date
-            2020/02/26(Wed) 19:00:00
-        .main_chat__message-list__main-box__current-box__text
-          こんばんは！
+      -# .main_chat__message-list__main-box__current-box
+      -#   .main_chat__message-list__main-box__current-box__upper-info
+      -#     .main_chat__message-list__main-box__current-box__upper-info__talker
+      -#       funa
+      -#     .main_chat__message-list__main-box__current-box__upper-info__date
+      -#       2020/02/26(Wed) 19:00:00
+      -#   .main_chat__message-list__main-box__current-box__text
+      -#     こんばんは！
 
-      .main_chat__message-list__main-box__current-box
-        .main_chat__message-list__main-box__current-box__upper-info
-          .main_chat__message-list__main-box__current-box__upper-info__talker
-            itakura
-          .main_chat__message-list__main-box__current-box__upper-info__date
-            2020/02/26(Wed) 19:00:00
-        .main_chat__message-list__main-box__current-box__text
-          こんばんは！
+      -# .main_chat__message-list__main-box__current-box
+      -#   .main_chat__message-list__main-box__current-box__upper-info
+      -#     .main_chat__message-list__main-box__current-box__upper-info__talker
+      -#       itakura
+      -#     .main_chat__message-list__main-box__current-box__upper-info__date
+      -#       2020/02/26(Wed) 19:00:00
+      -#   .main_chat__message-list__main-box__current-box__text
+      -#     こんばんは！
 
 
   .main_chat__message-form
     .main_chat__message-form__main-box
-      .main_chat__message-form__main-box__input-box
-        .main_chat__message-form__main-box__input-box__text
-          type a message
-        .main_chat__message-form__main-box__input-box__img
-          %label{class: "main_chat__message-form__main-box__input-box__img__label"}
-            = icon('fas', 'image fa-lg faa-shake animated-hover')
-            %input{type: "file", class: "main_chat__message-form__main-box__input-box__img__file"}
-            
-            
-      .main_chat__message-form__main-box__send-btn
-        = link_to "#", type: "submit", class: "send-btn" do
-          Send
+      = form_for [@group, @message], class: "new_message" do |f|
+        .main_chat__message-form__main-box__input-box
+          = f.text_field :content, class: 'main_chat__message-form__main-box__input-box__text', placeholder: 'type a message'
+          .main_chat__message-form__main-box__input-box__img
+            = f.label :image, class: "main_chat__message-form__main-box__input-box__img__label" do
+              = icon('fas', 'image fa-lg faa-shake animated-hover', class: 'icon')
+              = f.file_field :image, class: "main_chat__message-form__main-box__input-box__img__file"
+
+        = f.submit "Send", class: "main_chat__message-form__main-box__send-btn"
