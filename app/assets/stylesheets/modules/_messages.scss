@@ -55,16 +55,15 @@ $main-color: #ffffff;
   &__group-list {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
+    padding: 20px;
     // position: relative;
 
     &__group-names {
-      width: 300px;
       height: 105px;
       // position: absolute;
 
       &__name {
-        margin: 0 20px;
-        margin-top: 20px;
+        // margin-top: 20px;
         color: $main-color;
         font-size: 15px;
         font-weight: bold;
@@ -72,7 +71,6 @@ $main-color: #ffffff;
       }
 
       &__text {
-        margin: 0 20px;
         margin-top: 5px;
         margin-bottom: 40px;
         color: $main-color;
@@ -201,6 +199,12 @@ $main-color: #ffffff;
         line-height: 50px;
         @include between;
 
+      .new_message {
+        display: flex;
+        width: 100%;
+        // background-color: greenyellow;
+      }
+
       &__input-box {
         width: 100%;
         background-color: $main-color;
@@ -208,7 +212,7 @@ $main-color: #ffffff;
         
         &__text {
           height: 50px;
-          width: 300px;
+          width: 100%;
           padding-left: 10px;
           color: #999999;
           font-weight: bold;
@@ -240,11 +244,12 @@ $main-color: #ffffff;
         background-color: #38AEF0;
         text-align: center;
         cursor: pointer;
+        color: $main-color;
 
-        a {
-          text-decoration: none;
-          color: $main-color;
-        }
+        // a {
+        //   text-decoration: none;
+        //   color: $main-color;
+        // }
       }
     }
   }
