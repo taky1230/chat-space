@@ -77,6 +77,10 @@ $main-color: #ffffff;
         font-size: 11px;
         font-weight: bold;
       }
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 }
@@ -147,6 +151,14 @@ $main-color: #ffffff;
       margin-top: 28px;
       font-size: 16px;
       text-decoration: none;
+    }
+
+    &__edit-btn:hover {
+      border: 0.5px solid #ffffff;
+      // background-color: #38aef0;
+      background-image: linear-gradient(#6795fd 0%, #67ceff 100%);
+      transition: .4s;
+      color: $main-color;
     }
   }
 
@@ -245,11 +257,15 @@ $main-color: #ffffff;
         text-align: center;
         cursor: pointer;
         color: $main-color;
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+      }
 
-        // a {
-        //   text-decoration: none;
-        //   color: $main-color;
-        // }
+      &__send-btn:hover {
+        background: #ffffff;
+        color: #38aef0;
+        font-weight: bold;
       }
     }
   }
