@@ -3,7 +3,8 @@
     .main_chat__message-list__main-box__current-box__upper-info__talker
       = message.user.name
     .main_chat__message-list__main-box__current-box__upper-info__date
-      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+      = message.created_at.to_s(:datetime)
+      -# = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .main_chat__message-list__main-box__current-box__text
     - if message.content.present?
       %p.main_chat__message-list__main-box__current-box__text__content

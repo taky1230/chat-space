@@ -77,6 +77,10 @@ $main-color: #ffffff;
         font-size: 11px;
         font-weight: bold;
       }
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 }
@@ -120,7 +124,7 @@ $main-color: #ffffff;
         &__name {
           width: 150px;
           height: 15px;
-          margin-left: 60px;
+          margin-left: 70px;
           margin-top: 15px;
           line-height: 15px;
           font-size: 12px;
@@ -148,12 +152,20 @@ $main-color: #ffffff;
       font-size: 16px;
       text-decoration: none;
     }
+
+    &__edit-btn:hover {
+      border: 0.5px solid #ffffff;
+      background-image: linear-gradient(#6795fd 0%, #67ceff 100%);
+      transition: .4s;
+      color: $main-color;
+    }
   }
 
 
   &__message-list {
     background-color: #fafafa;
     height: calc(100vh - 190px);
+    overflow: scroll;
 
     &__main-box {
       padding: 35px 40px;
@@ -202,7 +214,6 @@ $main-color: #ffffff;
       .new_message {
         display: flex;
         width: 100%;
-        // background-color: greenyellow;
       }
 
       &__input-box {
@@ -245,11 +256,15 @@ $main-color: #ffffff;
         text-align: center;
         cursor: pointer;
         color: $main-color;
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+      }
 
-        // a {
-        //   text-decoration: none;
-        //   color: $main-color;
-        // }
+      &__send-btn:hover {
+        background: #ffffff;
+        color: #38aef0;
+        font-weight: bold;
       }
     }
   }
