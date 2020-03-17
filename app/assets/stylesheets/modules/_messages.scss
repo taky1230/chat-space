@@ -56,14 +56,11 @@ $main-color: #ffffff;
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     padding: 20px;
-    // position: relative;
 
     &__group-names {
       height: 105px;
-      // position: absolute;
 
       &__name {
-        // margin-top: 20px;
         color: $main-color;
         font-size: 15px;
         font-weight: bold;
@@ -171,7 +168,6 @@ $main-color: #ffffff;
       padding: 35px 40px;
 
       &__current-box {
-        // height: 95px;
 
         &__upper-info {
           height: 20px;
