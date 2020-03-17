@@ -3,7 +3,7 @@
     .main_chat__group-info__current-box
       .main_chat__group-info__current-box__current-group
         - current_user.groups.index do |group|
-          = group.name
+          = @group.name
       .main_chat__group-info__current-box__current-member
         Member :
         .main_chat__group-info__current-box__current-member__name
