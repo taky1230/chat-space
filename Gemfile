@@ -71,3 +71,5 @@ gem 'devise'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'jquery-rails'
+
+gem 'fog-aws'
