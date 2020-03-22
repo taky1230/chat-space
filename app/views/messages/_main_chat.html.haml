@@ -63,7 +63,8 @@
           = f.text_field :content, class: 'main_chat__message-form__main-box__input-box__text', placeholder: 'type a message'
           .main_chat__message-form__main-box__input-box__img
             = f.label :image, class: "main_chat__message-form__main-box__input-box__img__label" do
-              = icon('fas', 'image fa-lg faa-shake animated-hover', class: 'icon')
+              = icon('fas', 'image', class: 'icon')
+              -# = icon('fas', 'image fa-lg faa-shake animated-hover', class: 'icon')
               = f.file_field :image, class: "main_chat__message-form__main-box__input-box__img__file"
 
         = f.submit "Send", class: "main_chat__message-form__main-box__send-btn"
